@@ -10,6 +10,14 @@
 	<video width="768" autoplay="autoplay" controls>
 		<source type="video/mp4"  src="media/train.mp4">
 	</video>
-	<button id="playInVlc">button</button>
+	<button onclick="play_in_vlc('media/train.mp4')">button</button>
+    <script>
+	    function play_in_vlc(url) {
+            window.postMessage({
+                source: 'xmlhttprequest-play-in-vlc-url',
+                url 
+            }, '*');
+        }
+    </script>
 </body>
 </html>
